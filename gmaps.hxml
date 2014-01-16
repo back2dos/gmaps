@@ -1,0 +1,3 @@
+-cp src
+-js bin/test.js
+-main Main
