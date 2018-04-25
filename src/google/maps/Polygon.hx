@@ -4,7 +4,7 @@ import haxe.Constraints;
 import haxe.extern.*;
 import google.maps.LatLng;
 
-extern class Polygon {
+extern class Polygon extends MVCObject {
 	function new(options:{});
 	function getPaths():MVCArray<Path>;
 	function setPaths(v:EitherType<Array<Array<LatLngLiteral>>, Array<Array<LatLng>>>):Void;
