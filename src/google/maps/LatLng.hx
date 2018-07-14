@@ -6,6 +6,6 @@ extern class LatLng {
 }
 
 typedef LatLngLiteral = {
-	lat:Float,
-	lng:Float,
+	var lat(default, never):Float;
+	var lng(default, never):Float;
 }
