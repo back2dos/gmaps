@@ -5,7 +5,7 @@ import haxe.extern.*;
 import google.maps.LatLng;
 
 extern class Marker extends MVCObject {
-	function new(?options:{});
+	function new(?options:MarkerOptions);
 	
 	function setAnimation(v:String):Void;
 	function setClickable(v:Bool):Void;

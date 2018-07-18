@@ -1,9 +1,10 @@
 package google.maps.drawing;
 
-extern class OverlayType {
-	static var POLYGON:String;
-	static var CIRCLE:String;
-	static var MARKER:String;
-	static var POLYLINE:String;
-	static var RECTANGLE:String;
+@:enum @:native('google.maps.drawing.OverlayType')
+extern abstract OverlayType(String) {
+	var POLYGON;
+	var CIRCLE;
+	var MARKER;
+	var POLYLINE;
+	var RECTANGLE;
 }
