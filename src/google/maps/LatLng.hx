@@ -7,6 +7,9 @@ extern class LatLng {
 
 @:forward
 abstract LatLngLiteral(Literal) from Literal to Literal {
+	public inline function new(lat, lng) 
+		this = {lat: lat, lng: lng}
+	
 	@:from
 	public static inline function fromLatLng(v:LatLng):LatLngLiteral {
 		return {lat: v.lat(), lng: v.lng()}
