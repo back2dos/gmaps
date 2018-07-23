@@ -18,5 +18,6 @@ extern class Polygon extends MVCObject {
 	function setVisible(v:Bool):Void;
 	
 	
+	function getDraggable():Bool;
 	function getPaths():MVCArray<Path>;
 }

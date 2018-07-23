@@ -14,6 +14,13 @@ abstract LatLngLiteral(Literal) from Literal to Literal {
 	public static inline function fromLatLng(v:LatLng):LatLngLiteral {
 		return {lat: v.lat(), lng: v.lng()}
 	}
+	
+	#if geojson
+	@:from
+	public static inline function fromGeojson(v:geojson.util.Coordinates):LatLngLiteral {
+		return {lat: v.latitude, lng: v.longitude}
+	}
+	#end
 }
 
 private typedef Literal = {
