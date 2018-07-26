@@ -23,4 +23,5 @@ extern class Marker extends MVCObject {
 	
 	
 	function getPosition():LatLng;
+	function getMap():Map;
 }

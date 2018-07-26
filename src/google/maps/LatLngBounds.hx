@@ -16,7 +16,7 @@ abstract LatLngBoundsLiteral(Literal) from Literal to Literal {
 		this = v;
 	
 	@:from
-	public static inline function fromLatLngBounds(v:LatLngBounds):LatLngBoundsLiteral {
+	public static function fromLatLngBounds(v:LatLngBounds):LatLngBoundsLiteral {
 		var ne = v.getNorthEast();
 		var sw = v.getSouthWest();
 		return {
@@ -28,11 +28,20 @@ abstract LatLngBoundsLiteral(Literal) from Literal to Literal {
 	}
 	
 	@:from
-	public static inline function fromLatLngLiterals(v:Array<LatLngLiteral>):LatLngBoundsLiteral {
-		var bound = new LatLngBounds();
-		for(p in v) bound.extend(p);
-		return fromLatLngBounds(bound);
+	public static function fromLatLngLiterals(v:Array<LatLngLiteral>):LatLngBoundsLiteral {
+		var bounds = new LatLngBounds();
+		for(p in v) bounds.extend(p);
+		return fromLatLngBounds(bounds);
 	}
+	
+	#if geojson
+	@:from
+	public static function fromGeoJsonMultiPolygon(v:geojson.MultiPolygon):LatLngBoundsLiteral {
+		var bounds = new LatLngBounds();
+		for(polygon in v.polygons) for(lines in polygon.lines) for(point in lines.points) bounds.extend((point:LatLngLiteral));
+		return fromLatLngBounds(bounds);
+	}
+	#end
 }
 
 private typedef Literal = {

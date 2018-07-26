@@ -20,4 +20,5 @@ extern class Polygon extends MVCObject {
 	
 	function getDraggable():Bool;
 	function getPaths():MVCArray<Path>;
+	function getMap():Map;
 }

@@ -14,4 +14,8 @@ extern class InfoWindow extends MVCObject {
 	function setOptions(options:{}):Void;
 	function setPosition(v:EitherType<LatLng, LatLngLiteral>):Void;
 	function setZIndex(v:Float):Void;
+	
+	function getMap():Map;
+	function getAnchor():MVCObject;
+	function getPosition():LatLng;
 }
