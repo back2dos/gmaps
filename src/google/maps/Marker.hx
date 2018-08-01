@@ -20,8 +20,12 @@ extern class Marker extends MVCObject {
 	function setVisible(v:Bool):Void;
 	function setZIndex(v:Int):Void;
 	function setMap(map:Map):Void;
+	inline function setData(v:Any):Void
+		this.set('__gmaps_data', v);
 	
 	
 	function getPosition():LatLng;
 	function getMap():Map;
+	inline function getData():Any
+		return this.get('__gmaps_data');
 }
