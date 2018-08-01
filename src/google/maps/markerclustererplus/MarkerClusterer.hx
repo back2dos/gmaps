@@ -11,10 +11,12 @@ extern class MarkerClusterer {
 	function addMarkers(markers:Array<Marker>, ?nodraw:Bool):Array<Marker>;
 	function clearMarkers():Void;
 	
+	function getAverageCenter():Bool;
 	function getMap():Map;
 	function getMarkers():Array<Marker>;
 	function getZoomOnClick():Bool;
 	
+	function setAverageCenter(v:Bool):Void;
 	function setMap(v:Map):Void;
 	function setZoomOnClick(v:Bool):Void;
 	
