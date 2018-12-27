@@ -4,7 +4,7 @@ import haxe.extern.*;
 import google.maps.LatLng;
 
 extern class LatLngBounds {
-	function new();
+	function new(?sw:LatLng, ?ne:LatLng);
 	function extend(point:EitherType<LatLng, LatLngLiteral>):Void;
 	function getNorthEast():LatLng;
 	function getSouthWest():LatLng;

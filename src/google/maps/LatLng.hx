@@ -1,6 +1,7 @@
 package google.maps;
 
 extern class LatLng {
+	function new(lat:Float, lng:Float, ?noWrap:Bool);
 	function lat():Float;
 	function lng():Float;
 }
