@@ -10,6 +10,7 @@ extern class OverlayView extends MVCObject {
 	
 	function setMap(map:Map):Void;
 	
+	function getMap():Map;
 	function getPanes():MapPanes;
 	function getProjection():MapCanvasProjection;
 }
