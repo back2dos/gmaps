@@ -4,6 +4,7 @@ import haxe.Constraints;
 import google.maps.Event;
 
 extern class MVCObject {
+	function new();
 	function addListener(eventName:String, handler:Function):MapsEventListener;
 	function bindTo(key:String, target:MVCObject, ?targetKey:String, ?noNotify:Bool):Void;
 	function get(key:String):Dynamic;
